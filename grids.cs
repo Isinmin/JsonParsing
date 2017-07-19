@@ -21,6 +21,7 @@ namespace Теги
                 wc.Encoding = Encoding.UTF8;
                 wc.Headers["Content-Type"] = "application/x-www-form-urlencoded";
                 wc.Headers["key"] = "eVCX2lzO7prHREze1TY2wglCAaHg7eHUNqJYUMi5Ps8zbzpLNLKqvKyenU5v6pPfMj35PG==";
+                var data = wc.UploadString($"https://api.eldis24.ru/api/{VERSION}/users/login", "login=uLoginHerepass=uPasswordHere");
                 var cookies = wc.ResponseHeaders[HttpResponseHeader.SetCookie];
 
                 Regex reg = new Regex("access_token=(?<Token>[^;]+)");
